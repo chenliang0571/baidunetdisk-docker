@@ -1,6 +1,6 @@
-FROM jlesage/baseimage-gui:debian-9
+FROM jlesage/baseimage-gui:debian-11-v4
 
-ENV VERSION=4.14.5
+ENV VERSION=4.17.7
 ENV URI=https://issuepcdn.baidupcs.com/issue/netdisk/LinuxGuanjia/$VERSION/baidunetdisk_${VERSION}_amd64.deb
 
 ENV DISPLAY=":1"
@@ -31,7 +31,7 @@ RUN curl -L ${URI} -o /defaults/baidunetdisk.deb     \
     && rm /defaults/baidunetdisk.deb 
 
 RUN \
-    APP_ICON_URL='https://raw.githubusercontent.com/KevinLADLee/baidunetdisk-docker/master/logo.png' && \
+    APP_ICON_URL='https://raw.githubusercontent.com/chenliang0571/baidunetdisk-docker/master/logo.png' && \
     install_app_icon.sh "$APP_ICON_URL"
 
 COPY rootfs/ /
